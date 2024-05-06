@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:util="http://www.springframework.org/schema/util"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<!-- Standalone list -->
+	
+	<util:list list-class="java.util.LinkedList" id="mybestfriends">
+	<value>Bhawna</value>
+	<value>Muskan</value>
+	<value>Hanoo</value>
+	</util:list>
+	
+	<!-- Standalone list -->
+	
+	<util:map map-class="java.util.TreeMap" id="myfee">
+	<entry key="Mango Shake" value="100"></entry>
+	<entry key="Black Current Shake" value="120"></entry>
+	<entry key="Banana Shake" value="70"></entry>
+	
+	</util:map>
+
+
+	<bean class="com.springcore.standalone.collections.Person" name="person1">
+	<property name="friends" ref  ="mybestfriends" />
+
+	</bean>
+	
+	<bean class="com.springcore.standalone.collections.Person" name="person2">
+	<property name="friends" ref  ="mybestfriends" />
+	<property name="fee" ref="myfee"></property>
+
+	</bean>
+	
+		
+	
+</beans>  
